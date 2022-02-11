@@ -57,8 +57,26 @@ workflows:
     jobs:
       - checkout_and_unit_Test
       - deploy_backend
+        requires:
+            - checkout_and_unit_Test
       - integration_tests_backend
+        requires:
+            - deploy_backend
       - deploy_staging
+        requires:
+            - integration_tests_backend
+      - acceptances1:
+          requires:
+            - deploy_staging
+      - acceptances2:
+          requires:
+            - deploy_staging
+      - acceptances3:
+          requires:
+            - deploy_staging
+      - acceptances4:
+          requires:
+            - deploy_staging
       - deploy_production:
           requires:
             - acceptances1
