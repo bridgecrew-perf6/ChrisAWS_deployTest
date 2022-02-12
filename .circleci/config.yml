@@ -1,13 +1,10 @@
 version: 2.1
 
-jobs:
-  
+jobs: 
   checkout_and_unit_Test:
-    docker:
-      - image: cimg/node:15.8.0
+    machine: true
     steps:
-      - checkout
-      - run: echo "unit tests"
+      - run: echo "notifying team of new build pipeline"
   deploy_backend:
     machine: true
     steps:
@@ -37,21 +34,17 @@ jobs:
     steps:
       - run: echo "acceptance tests 1-5"
   checkoutAndTest:
-    docker:
-      - image: cimg/node:15.8.0
+    machine: true
     steps:
-      - checkout
-      - run: echo "unit tests"
+      - run: echo "notifying team of new build pipeline"
   acceptances4:
     machine: true
     steps:
       - run: echo "acceptance tests 1-5"
   deploy_production:
-    docker:
-      - image: cimg/node:15.8.0
+    machine: true
     steps:
-      - checkout
-      - run: echo "unit tests"    
+      - run: echo "notifying team of new build pipeline"   
 workflows:
   build:
     jobs:
