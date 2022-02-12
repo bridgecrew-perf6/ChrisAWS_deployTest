@@ -21,22 +21,14 @@ jobs:
     machine: true
     steps:
       - run: echo "acceptance tests 6-10"
-  deployStaging:
+  deploy_staging:
     machine: true
     steps:
       - run: echo "deploy staging"
-  notifyNewVersion:
-    machine: true
-    steps:
-      - run: echo "notifying client of new version"
   acceptances3:
     machine: true
     steps:
       - run: echo "acceptance tests 1-5"
-  checkoutAndTest:
-    machine: true
-    steps:
-      - run: echo "notifying team of new build pipeline"
   acceptances4:
     machine: true
     steps:
